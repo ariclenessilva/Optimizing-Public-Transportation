@@ -56,7 +56,7 @@ class Line:
 
     def process_message(self, message):
         """Given a kafka message, extract data"""
-        if "stations.transformed" in message.topic():
+        if "stations.table" in message.topic():
             try:
                 value = json.loads(message.value())
                 self._handle_station(value)

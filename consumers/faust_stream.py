@@ -64,7 +64,7 @@ async def transform_stations(stations):
             order = station.order,
             line = linecolor
         )
-
+        table[station.station_id] = transformed_station
         await out_topic.send(key=station.station_name, value=transformed_station)
 
 
